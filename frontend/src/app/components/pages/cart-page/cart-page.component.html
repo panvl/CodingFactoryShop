@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="my-3"></h2>
+  <app-title title="Cart Page"></app-title>
+
+  <div *ngIf="cart && cart.items.length">
+    <div class="row">
+      <div
+        class="col-12 col-md-6 col-lg-4 mb-4"
+        *ngFor="let cartItem of cart.items"
+      >
+        <div class="media">
+          <img
+            class="mr-3"
+            [src]="cartItem.product.imageurl"
+            [alt]="cartItem.product.name"
+            style="width: 64px; height: 64px"
+          />
+          <div class="media-body">
+            <a
+              routerLink="/product/{{ cartItem.product.id }}"
+              class="mt-0 mb-1 cart-product-name"
+            >
+              {{ cartItem.product.name }}
+            </a>
+            <select
+              class="custom-select custom-select-sm mb-1 w-auto"
+              #quantitySelect
+              [value]="cartItem.quantity"
+              (change)="changeQuantity(cartItem, quantitySelect.value)"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <div class="mb-1">{{ cartItem.price | currency : "EUR" }}</div>
+            <button
+              class="btn btn-sm btn-outline-danger remove-button"
+              (click)="removeFromCart(cartItem)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkout my-3">
+      <div class="products-count">{{ cart.totalCount }}</div>
+      <div class="total-price">{{ cart.totalPrice | currency : "EUR" }}</div>
+      <a routerLink="/checkout" class="btn btn-primary">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <div *ngIf="!(cart && cart.items.length)">
+    <div class="alert alert-info" role="alert">Your cart is empty.</div>
+  </div>
+</div>

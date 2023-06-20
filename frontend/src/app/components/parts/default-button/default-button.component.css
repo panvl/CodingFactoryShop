@@ -1,0 +1,14 @@
+.container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+ .btn {
+  color: #fff;
+  background-color: #333333;
+}
+ .btn:hover {
+  color: #fff;
+  background-color: #782024;
+}

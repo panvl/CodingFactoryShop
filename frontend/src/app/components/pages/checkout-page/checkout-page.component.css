@@ -1,0 +1,40 @@
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #333;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+form .form-group label {
+  color: #333;
+}
+
+form .form-group label:hover {
+  color: #782024;
+}
+
+.buttons-container {
+  text-align: right;
+}
+
+.buttons .btn {
+  color: #fff;
+  background-color: #333;
+}
+
+.buttons .btn:hover {
+  color: #fff;
+  background-color: #782024;
+}

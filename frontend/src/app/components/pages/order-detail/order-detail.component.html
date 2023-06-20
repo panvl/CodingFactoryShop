@@ -1,0 +1,14 @@
+<div *ngIf="order">
+  <h2>Order Details</h2>
+  <p><strong>Order ID:</strong> {{ order.id }}</p>
+  <p><strong>Total Price:</strong> {{ order.totalPrice }}</p>
+  <p><strong>Order Date:</strong> {{ order.createdAt }}</p>
+
+  <h3>Items</h3>
+  <div *ngFor="let item of order.items">
+    <h4>{{ item.product.name }}</h4>
+    <p><strong>Price:</strong> {{ item.price }}</p>
+    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+    <p><strong>Color:</strong> {{ item.product.color }}</p>
+  </div>
+</div>

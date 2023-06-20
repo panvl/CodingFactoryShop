@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="my-3 text-center">Profile</h2>
+  <div class="profile box" *ngIf="user">
+    <p class="mt-0 mb-1 profile-detail">
+      <strong>Name:</strong> {{ user.name }}
+    </p>
+    <p class="profile-detail"><strong>Email:</strong> {{ user.email }}</p>
+    <p class="profile-detail"><strong>Address:</strong> {{ user.address }}</p>
+  </div>
+</div>
